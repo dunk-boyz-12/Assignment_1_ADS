@@ -236,6 +236,10 @@ int main(int argc, char *argv[]){
         myNumbers.sortArray();
         //print sorted class array values to the console
         myNumbers.printArray();
+        //destroy class object when finished to free up memory that was allocated for the class object
+        /*
+         myNumbers.~C_Numbers(); <-- why wouldnt I place this here? tells me its causing heap corruption.
+        */
         //catch all custom exceptions that might have been thrown
     } catch(MyException &error) {
         cout << error.what();
@@ -243,6 +247,6 @@ int main(int argc, char *argv[]){
     } catch(exception &error) {
         cout << error.what();
     }
-
+    
     return 0;
 }
