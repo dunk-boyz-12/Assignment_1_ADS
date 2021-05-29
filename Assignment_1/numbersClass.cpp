@@ -56,8 +56,13 @@ C_Numbers::~C_Numbers(){
 **    Side Effects: p_printArray is called to print sorted array, p_numArray values are printed to the console.
 */
 void C_Numbers::printArray(void){
-    //call to private function
-    this->p_printArray();
+    //make sure array is populated
+    if(this->p_numArray == NULL){
+        throw MyException("The array was not populated correctly after being sorted, Sorry !");
+    } else {
+        //call to private function
+        this->p_printArray();
+    }
 }
 
 /*
@@ -80,8 +85,15 @@ void C_Numbers::readFile(char fileName[100]){
 **    Side Effects: private method, p_sortArray(), is called to sort array values in ascending order.
 */
 void C_Numbers::sortArray(){
-    //call to private function
-    this->p_sortArray();
+    //make sure p_numArray exists
+    if(this->p_numArray == NULL){
+        throw MyException("The array was not populated correctly, Sorry !");
+    } else if(this->p_arraySize == 0){
+        throw MyException("The array size is not known, Sorry !");
+    } else {
+        //call to private function
+        this->p_sortArray();
+    }
 }
 
 /*
@@ -180,13 +192,25 @@ void C_Numbers::p_readFile(char fileName[100]){
     } else {
         //update array size variable
         inFile >> this->p_arraySize;
+        //check
+        if(this->p_arraySize == 0){
+            throw MyException("There was an issue getting the number of integers within the input file, Sorry !");
+        }
         //allocate memory for numbers array
         this->p_numArray = new int[this->p_arraySize];
+        //check
+        if(this->p_numArray == NULL){
+            throw bad_alloc();
+        }
         //populate array with numbers from file
         for(int index = 0; index < this->p_arraySize; index++) {
             inFile >> this->p_numArray[index];
         }
-        //close input file
+        //check
+        if(this->p_numArray == NULL){
+            throw MyException("There was an issue initially populating the numbers array, Sorry !");
+        }
+        //close input file after reading
         inFile.close();
     }
 }
@@ -215,9 +239,10 @@ int main(int argc, char *argv[]){
         //catch all custom exceptions that might have been thrown
     } catch(MyException &error) {
         cout << error.what();
+        //catch all other exceptions that might have been thrown
     } catch(exception &error) {
         cout << error.what();
     }
 
-    //return 0;
+    return 0;
 }

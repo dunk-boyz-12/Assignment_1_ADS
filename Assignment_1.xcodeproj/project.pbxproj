@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		078B8C2726607E270098D04F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078B8C2626607E270098D04F /* main.cpp */; };
+		078B8C3B266081440098D04F /* numbersClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078B8C3A266081440098D04F /* numbersClass.cpp */; };
+		078B8C522660E0850098D04F /* customErrorClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 078B8C512660E0850098D04F /* customErrorClass.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,10 @@
 
 /* Begin PBXFileReference section */
 		078B8C2326607E270098D04F /* Assignment_1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Assignment_1; sourceTree = BUILT_PRODUCTS_DIR; };
-		078B8C2626607E270098D04F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		078B8C2E26607FAC0098D04F /* input.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.dat; sourceTree = "<group>"; };
+		078B8C3A266081440098D04F /* numbersClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = numbersClass.cpp; sourceTree = "<group>"; };
+		078B8C512660E0850098D04F /* customErrorClass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = customErrorClass.cpp; sourceTree = "<group>"; };
+		078B8C552660E0870098D04F /* customErrorClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = customErrorClass.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,10 @@
 		078B8C2526607E270098D04F /* Assignment_1 */ = {
 			isa = PBXGroup;
 			children = (
-				078B8C2626607E270098D04F /* main.cpp */,
+				078B8C3A266081440098D04F /* numbersClass.cpp */,
+				078B8C552660E0870098D04F /* customErrorClass.h */,
+				078B8C512660E0850098D04F /* customErrorClass.cpp */,
+				078B8C2E26607FAC0098D04F /* input.dat */,
 			);
 			path = Assignment_1;
 			sourceTree = "<group>";
@@ -118,7 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078B8C2726607E270098D04F /* main.cpp in Sources */,
+				078B8C522660E0850098D04F /* customErrorClass.cpp in Sources */,
+				078B8C3B266081440098D04F /* numbersClass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
